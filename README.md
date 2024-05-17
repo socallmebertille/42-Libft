@@ -1,2 +1,2 @@
 # Libft
-Ta propre bibliothèque rien que pour toi
+Your very first own library
