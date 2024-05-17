@@ -13,11 +13,11 @@ OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
+${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}
 
 .c.o:
-	cc ${FLAGS} -c $< -o $@
+	cc ${FLAGS} -I ${INCLUDE} -c $< -o $@
 
 clean: 
 	rm -rf ${OBJS}
