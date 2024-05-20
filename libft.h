@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:29:02 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/20 13:19:27 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/20 23:18:52 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef unsigned long size_t;
+typedef unsigned long	size_t;
 
-typedef struct s_list t_list;
+typedef struct s_list	t_list;
 struct s_list
 {
-	t_list *next;
-	void *data;
+	t_list	*next;
+	void	*data;
 };
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *str, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
-void			*ft_memmove(void *dest, const void *src, size_t length);
+void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_calloc(size_t count, size_t size);
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
