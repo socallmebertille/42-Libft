@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:29:02 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/17 18:54:48 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/20 13:19:27 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+typedef unsigned long size_t;
+
+typedef struct s_list t_list;
+struct s_list
+{
+	t_list *next;
+	void *data;
+};
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *str, size_t n);
