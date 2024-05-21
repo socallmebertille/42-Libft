@@ -1,56 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_stlcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 19:31:11 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 12:18:31 by saberton         ###   ########.fr       */
+/*   Created: 2024/05/21 12:09:03 by saberton          #+#    #+#             */
+/*   Updated: 2024/05/21 12:15:10 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	char		*d;
-	const char	*s;
-	size_t		i;
-
-	d = (char *)dest;
-	s = (const char *)src;
-	if (d < s)
-	{
-		i = 0;
-		while (i < n)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
-	else
-	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			d[i] = s[i];
-		}
-	}
-	return (dest);
-}
-
-#include <stdio.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int	main(void)
 {
-	char	src[] = "1234567890";
+	char	src[4] = "Hola";
+	char	cpy[4];
 
 	printf("%s\n", src);
-	ft_memmove(src, src + 3, 5);
-	//mouvement de memoire de n octets a la position pointee par dest dans src
-	printf("%s\n", src);
+	printf("%d\n", strlcpy(cpy, src, 4));
 	return (0);
 }
