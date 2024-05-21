@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 19:31:11 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 12:18:31 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/21 12:56:12 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 #include <string.h>
 
 int	main(void)
@@ -49,8 +49,8 @@ int	main(void)
 	char	src[] = "1234567890";
 
 	printf("%s\n", src);
-	ft_memmove(src, src + 3, 5);
+	ft_memmove(src + 5, src + 3, 4);
 	//mouvement de memoire de n octets a la position pointee par dest dans src
 	printf("%s\n", src);
 	return (0);
-}
+}*/
