@@ -1,48 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:29:22 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/23 15:03:57 by saberton         ###   ########.fr       */
+/*   Created: 2024/05/23 20:27:46 by saberton          #+#    #+#             */
+/*   Updated: 2024/05/23 20:36:56 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+void    ft_putendl_fd(char *s, int fd)
 {
-	char	*s;
-
-	while (str)
-	{
-		if (*str == c)
-		{
-			s = (char *)str;
-		}
-		str++;
-		if (*str == '\0' && s != (void *)0)
-			return (s);
-	}
-	if (*str == c)
-	{
-		s = (char *)str;
-		return (s);
-	}
-	s = NULL;
-	return (s);
+	while (*s)
+                ft_putchar_fd(*s++, fd);
+	ft_putchar_fd('\n', fd);
 }
 
-/*#include <string.h>
-#include <stdio.h>
+/*#include <fcntl.h>
 
 int     main(void)
 {
-        char    *str = "Hola que tal";
+        int     fd = open("test.txt", O_TRUNC | O_CREAT | O_RDWR, 0640);
 
-        printf("%s\n", ft_strrchr(str, 97));
-        printf("%s\n", strrchr(str, 97));
+        ft_putendl_fd("Hola", fd);
+        close(fd);
         return (0);
 }*/
