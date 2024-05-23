@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 12:58:05 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 13:22:34 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/23 12:08:04 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,17 @@ void	ft_bzero(void *s, size_t n)
 		*z++ = '\0';
 }
 
-/*#include <stdio.h>
+/*
+OU
+void    ft_bzero(void *s, size_t n)
+{
+        char    *z;
+
+        z = (char *)s;
+        ft_memset(s, 0, n);
+}
+
+#include <stdio.h>
 #include <strings.h>
 
 int	main(void)
