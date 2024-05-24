@@ -6,33 +6,25 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 15:55:49 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/23 19:30:48 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/24 14:25:12 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
-	size_t	len;
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	len = 0;
-	while (ft_strchr(set, *s1++))
-		len++;
-	printf("%zu\n", len);
-	if (len == 0)
-		return (NULL);
-	trim = (char *)malloc(sizeof(char) * (len - i + 1));
-	if (!trim)
-		return (NULL);
-	j = 0;
-	//while (s1[i] && i < len)
-	//	trim[j++] = s1[i++];
+	while (s1[i] && ft_strchr(set, s1[i]))
+		i++;
+	j = ft_strlen(s1);
+	while (s1[j - 1] && ft_strchr(set, s1[j - 1]))
+		j--;
+	trim = ft_substr(s1, i, j - i);
 	return (trim);
 }
 
@@ -40,8 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 int	main(void)
 {
-	char	*s1 = "**Hola**";
-	char	*set = "**";
+	char	*s1 = "***H*o*la***";
+	char	*set = "*";
 	char	*trim;
 
 	printf("Chaine s1 : %s & Chaine set : %s\n", s1, set);
