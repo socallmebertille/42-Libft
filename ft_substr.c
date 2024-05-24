@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 14:19:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/23 16:01:17 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/24 19:56:06 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (s[start] != '\0' && i < len)
 		sub[i++] = s[start++];
+	sub[i] = '\0';
 	return (sub);
 }
 
