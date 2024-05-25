@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:06:02 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 18:45:40 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:01:41 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz)
 	unsigned int	i;
 
 	i = 0;
+	if (siz == 0)
+		return (ft_strlen(src));
 	while (src[i] && i < siz - 1)
 	{
 		dst[i] = src[i];

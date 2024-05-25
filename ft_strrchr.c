@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:29:22 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/24 11:03:55 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:27:52 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ char	*ft_strrchr(const char *str, int c)
 		if (*str == '\0' && s != (void *)0)
 			return (s);
 	}
-	return (s);
+	if (c == '\0')
+		return ((char *)str);
+	return ((char *)0);
 }
 
 /*#include <string.h>

@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 21:07:39 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 17:03:24 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 18:48:20 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ char	*ft_itoa(int n)
 	s = (char *)malloc(sizeof(char) * (count + 2));
 	if (!s)
 		return (NULL);
-	printf("%d\n", count + 2);
 	if (nb < 0)
 	{
 		nb = -nb;

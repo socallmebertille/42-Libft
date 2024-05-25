@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 17:29:37 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 18:03:55 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:36:48 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		d1++;
 		d2++;
 	}
-	return (*d1 - *d2);
+	if (!n)
+		return (0);
+	return ((unsigned char)*d1 - (unsigned char)*d2);
 }
 
 /*#include <stdio.h>

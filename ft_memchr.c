@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:14:46 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 16:57:58 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 20:28:49 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (p);
 		p++;
 	}
-	return (p);
+	if (c == '\0')
+		return (p);
+	return (NULL);
 }
 
 /*#include <stdio.h>
