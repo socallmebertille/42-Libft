@@ -1,44 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 12:55:59 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 17:02:16 by saberton         ###   ########.fr       */
+/*   Created: 2024/05/25 17:05:37 by saberton          #+#    #+#             */
+/*   Updated: 2024/05/25 18:45:22 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i])
+	while (s[i])
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		f(i, s);
 		i++;
 	}
-	if (i < n)
-		return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	return (0);
 }
 
 /*#include <stdio.h>
-#include <string.h>
+
+void	ft_change(unsigned int i, char *s)
+{
+	if (s[i] >= 'a' && s[i] <= 'z')
+		s[i] -= 32;
+	else if (s[i] >= 'A' && s[i] <= 'Z')
+		s[i] += 32;
+}
 
 int	main(void)
 {
-	char	*s1 = "Hola";
-	char	*s2 = "Holb";
+	char	s[] = "Hola que tal ?";
 
-	printf("%d\n", ft_strncmp(s1, s2, 4));
-	printf("%d\n", strncmp(s1, s2, 4));
-	printf("%d\n", ft_strncmp(s1, s2, 3));
-	printf("%d\n", strncmp(s1, s2, 3));
+	printf("Chaine originale :\n%s\n", s);
+	printf("Chaine apres ft_change :\n");
+	ft_striteri(s, ft_change);
+	printf("%s\n", s);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 21:07:39 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 15:06:08 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/25 17:03:24 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ int	ft_count(long nb)
 
 char	*ft_itoa(int n)
 {
-	int 	count;
-	long	nb;
-	char	*s;
+	int			count;
+	long		nb;
+	char		*s;
 
 	nb = n;
 	count = ft_count(nb);
