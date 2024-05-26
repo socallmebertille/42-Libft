@@ -1,7 +1,8 @@
 #Variables
 
 NAME = libft.a
-CCFLAGS = cc -Wall -Wextra -Werror
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 
 #Sources et Objects
@@ -41,25 +42,39 @@ SRCS = ft_isalpha.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c
 
+BONUS_SRCS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJS = ${SRCS:.c=.o}
+
+BONUS_OBJS = ${BONUS_SRCS:.c=.o}
 
 #Rules
 
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	${AR} $@ $^
+	${AR} ${NAME} ${OBJS}
 
 .c.o:
-	${CCFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 clean: 
-	rm -rf ${OBJS}
+	rm -rf ${OBJS} ${BONUS_OBJS}
 
 fclean: clean
 	rm -rf ${NAME}
 
+bonus: ${ONJS} ${BONUS_OBJS}
+	${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean bonus re
