@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 11:36:44 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/23 12:06:52 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 04:26:38 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	len = nmemb * size;
 	if (nmemb != 0 && len / nmemb != size)
-		return (NULL);
-	if (size == 0 || nmemb == 0)
 		return (NULL);
 	ptr = malloc(len);
 	if (!ptr)

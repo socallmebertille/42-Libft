@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 14:26:49 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/21 17:27:17 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 02:50:38 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (char *)dest;
 	s = (const char *)src;
+	if (d == (void *)0 && s == (void *)0)
+		return (NULL);
 	while (n-- > 0)
 		*d++ = *s++;
 	return (dest);

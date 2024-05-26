@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 21:07:39 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 18:48:20 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 01:34:16 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,21 +41,22 @@ char	*ft_itoa(int n)
 	count = ft_count(nb);
 	if (!count)
 		return (NULL);
-	s = (char *)malloc(sizeof(char) * (count + 2));
+	s = (char *)malloc(sizeof(char) * (count + 1));
 	if (!s)
 		return (NULL);
+	s[count] = '\0';
 	if (nb < 0)
 	{
 		nb = -nb;
 		s[0] = '-';
 	}
-	s[count--] = '\0';
-	while (nb > 9)
+	else if (nb == 0)
+		s[0] = '0';
+	while (nb != 0)
 	{
-		s[count--] = nb % 10 + '0';
+		s[--count] = nb % 10 + '0';
 		nb = nb / 10;
 	}
-	s[count--] = nb + '0';
 	return (s);
 }
 

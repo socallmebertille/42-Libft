@@ -1,8 +1,8 @@
 #Variables
 
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
-INCLUDE = libft.h
+CCFLAGS = cc -Wall -Wextra -Werror
+AR = ar rcs
 
 #Sources et Objects
 
@@ -49,10 +49,10 @@ OBJS = ${SRCS:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	${AR} $@ $^
 
 .c.o:
-	cc ${FLAGS} -I ${INCLUDE} -c $< -o $@
+	${CCFLAGS} -c $< -o $@
 
 clean: 
 	rm -rf ${OBJS}

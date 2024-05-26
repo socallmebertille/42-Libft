@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 13:42:23 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 20:20:46 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 01:28:30 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *str, int c)
 {
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 			return ((char *) str);
 		str++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)str);
 	return ((char *)0);
 }
@@ -30,9 +30,9 @@ char	*ft_strchr(const char *str, int c)
 
 int	main(void)
 {
-	char	*str = "Hola que tal";
+	char	*str = "teste";
 
-	printf("%s\n", ft_strchr(str, 'a'));
-	printf("%s\n", strchr(str, 'a'));
+	printf("%s\n", ft_strchr(str, '\0'));
+	printf("%s\n", strchr(str, '\0'));
 	return (0);
 }*/

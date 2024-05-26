@@ -6,39 +6,37 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 14:41:20 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/24 21:04:07 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 02:44:45 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(const char *str, char c)
+int	len_tab(const char *str, char c)
 {
-	int	len;
+	int	count;
 	int	i;
 
 	i = 0;
-	len = 0;
+	count = 0;
 	while (str[i] != '\0')
 	{
 		if (str[i] != c)
 		{
-			len++;
+			count++;
 			while (str[i] != '\0' && str[i] != c)
 				i++;
 		}
 		if (str[i] == '\0')
-			return (len);
-	i++;
+			return (count);
+		else
+			i++;
 	}
-	return (len);
+	return (count);
 }
 
-void	free_tab(char **tab, const char *s, char c)
+void	free_tab(char **tab, int count)
 {
-	int	count;
-
-	count = ft_count(s, c);
 	while (count >= 0)
 	{
 		free(tab[count]);
@@ -60,15 +58,16 @@ char	**ft_tab(char const *s, char c, char **tab, int i)
 		else
 		{
 			j = 0;
-			while (s[i++] != c)
+			while (s[i + j] && s[i + j] != c)
 				j++;
-			tab[k] = ft_substr(s, i - j - 1, j);
+			tab[k] = ft_substr(s, i, j);
 			if (tab[k] == NULL)
 			{
-				free_tab(tab, s, c);
+				free_tab(tab, k - 1);
 				return (NULL);
 			}
 			k++;
+			i += j;
 		}
 	}
 	tab[k] = NULL;
@@ -78,20 +77,18 @@ char	**ft_tab(char const *s, char c, char **tab, int i)
 char	**ft_split(char const *s, char c)
 {
 	int		len;
-	int		i;
 	char	**tab;
 
 	if (!s)
 		return (NULL);
-	len = ft_count(s, c);
+	len = len_tab(s, c);
 	tab = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!tab)
 	{
 		free(tab);
 		return (NULL);
 	}
-	i = 0;
-	ft_tab(s, c, tab, i);
+	ft_tab(s, c, tab, 0);
 	if (!tab)
 	{
 		free(tab);
@@ -119,6 +116,6 @@ int	main(int ac, char **av)
 	while (tab[i])
 		printf("%s\n", tab[i++]);
 	printf("%s\n", tab[i]);
-	free_tab(tab, av[1], *av[2]);
+	free_tab(tab, ft_count(s, c));
 	return (0);
 }*/

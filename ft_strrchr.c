@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:29:22 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 20:27:52 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/26 01:25:12 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrchr(const char *str, int c)
 	s = NULL;
 	while (*str)
 	{
-		if (*str == c)
+		if (*str == (char)c)
 		{
 			s = (char *)str;
 		}
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *str, int c)
 		if (*str == '\0' && s != (void *)0)
 			return (s);
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 		return ((char *)str);
 	return ((char *)0);
 }
