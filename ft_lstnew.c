@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 04:51:00 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/26 05:28:20 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/27 15:31:40 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ t_list	*ft_lstnew(void *content)
 
 int	main(void)
 {
-	int	content = 42;
+	char	*content = "Hola";
 	t_list	*node = ft_lstnew(&content);
 
 	if (!node)
 		return(1);
-	printf("%d\n", *(int *)(node->content));
+	printf("%s\n", *(char **)(node->content));
 	free(node);
 	return (0);
 }*/
