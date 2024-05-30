@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/26 06:15:47 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/27 20:01:33 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/29 18:49:50 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst && del)
-		del(lst);
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
 
 /*#include <stdio.h>
 
-void	del_node(void *lst)
+void	del_node(void *node)
 {
-	free(lst);
+	free(node);
 }
 
 void	aff_list(t_list *lst)
@@ -42,30 +45,42 @@ int	main(void)
 	t_list	*elem3 = malloc(sizeof(t_list));
 	t_list	*elem4 = malloc(sizeof(t_list));
 
+	if (!elem1 || !elem2 || !elem3 || !elem4)
+	{
+		if (elem1)
+			free(elem1);
+		if (elem2)
+			free(elem2);
+		if (elem3)
+			free(elem3);
+		if (elem4)
+			free(elem4);
+		return (1);
+	}
+
 	lst = elem1;
-	elem1->content = "Hola";
+	elem1->content = ft_strdup("Hola");
 	elem1->next = elem2;
-	elem2->content = " hola,";
+	elem2->content = ft_strdup(" hola,");
 	elem2->next = elem3;
-	elem3->content = " que";
+	elem3->content = ft_strdup(" que");
 	elem3->next = elem4;
-	elem4->content = " tal ?";
+	elem4->content = ft_strdup(" tal ?");
 	elem4->next = NULL;
 
 	printf("Ma liste chainee avant ft_lstdelone :\n");
 	aff_list(lst);
-	t_list	*temp = elem2->next;
 	ft_lstdelone(elem2, del_node);
-	elem1->next = temp;
+	elem1->next = elem3;
 	printf("\nMa liste chainee apres ft_lstdelone :\n");
 	aff_list(lst);
 	
 	t_list	*lst_original;
 	while (lst)
 	{
-		lst_original = lst;
-		lst = lst->next;
-		ft_lstdelone(lst_original, del_node);
+		lst_original = lst->next;
+		ft_lstdelone(lst, del_node);
+		lst = lst_original;
 	}
 	return (0);
 }*/

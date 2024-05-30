@@ -85,15 +85,11 @@ char	**ft_split(char const *s, char c)
 	tab = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!tab)
 	{
-		free(tab);
 		return (NULL);
 	}
-	ft_tab(s, c, tab, 0);
+	tab = ft_tab(s, c, tab, 0);
 	if (!tab)
-	{
-		free(tab);
 		return (NULL);
-	}
 	return (tab);
 }
 
@@ -116,6 +112,6 @@ int	main(int ac, char **av)
 	while (tab[i])
 		printf("%s\n", tab[i++]);
 	printf("%s\n", tab[i]);
-	free_tab(tab, ft_count(s, c));
+	free_tab(tab, len_tab(av[1], *av[2]));
 	return (0);
 }*/

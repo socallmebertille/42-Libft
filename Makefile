@@ -72,7 +72,7 @@ clean:
 fclean: clean
 	rm -rf ${NAME}
 
-bonus: ${ONJS} ${BONUS_OBJS}
+bonus: ${OBJS} ${BONUS_OBJS}
 	${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
 
 re: fclean all

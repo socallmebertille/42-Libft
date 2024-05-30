@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 12:46:15 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/25 19:42:19 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:23:25 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,11 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
+
+/*#include <ctype.h>
+#include <stdio.h>
+
+int	main()
+{
+	printf("%c\n%c", ft_toupper(-5), toupper(-5));
+}*/

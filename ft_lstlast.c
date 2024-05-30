@@ -14,13 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	while (lst)
-	{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 		lst = lst->next;
-		if (lst->next == NULL)
-			return (lst);
-	}
-	return (NULL);
+	return (lst);
 }
 
 /*#include <stdio.h>
@@ -29,7 +27,8 @@ void	aff_list(t_list *lst)
 {
 	while (lst)
 	{
-		printf("%s", (char *)lst->content);
+		if (lst->content)
+			printf("%s", (char *)lst->content);
 		lst = lst->next;
 	}
 }
@@ -40,6 +39,17 @@ int	main(void)
 	t_list	*elem1 = malloc(sizeof(t_list));
 	t_list	*elem2 = malloc(sizeof(t_list));
 	t_list	*elem3 = malloc(sizeof(t_list));
+
+	if (!elem1 || !elem2 || !elem3)
+	{
+		if (elem1)
+			free(elem1);
+		if (elem2)
+			free(elem2);
+		if (elem3)
+			free(elem3);
+		return (1);
+	}
 
 	lst = elem1;
 	elem1->content = "Hola";
@@ -52,7 +62,21 @@ int	main(void)
 	printf("Ma liste chainee :\n");
 	aff_list(lst);
 	
-	t_list	*last = malloc(sizeof(t_list));
+	t_list	*last = ft_lstlast(lst);
+	printf("\nDernier element de ma liste chainee :\n");
+	printf("%s\n", (char *)last->content);
+	
+	lst->next = NULL;
+	printf("Ma liste chainee :\n");
+	aff_list(lst);
+	
+	last = ft_lstlast(lst);
+	printf("\nDernier element de ma liste chainee :\n");
+	printf("%s\n", (char *)last->content);
+	
+	lst->content = NULL;
+	printf("Ma liste chainee :\n");
+	aff_list(lst);
 	
 	last = ft_lstlast(lst);
 	printf("\nDernier element de ma liste chainee :\n");
@@ -61,5 +85,6 @@ int	main(void)
 	free(elem1);
 	free(elem2);
 	free(elem3);
+
 	return (0);
 }*/

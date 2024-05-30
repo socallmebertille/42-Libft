@@ -43,6 +43,17 @@ int	main(void)
 	t_list	*elem2 = malloc(sizeof(t_list));
 	t_list	*elem3 = malloc(sizeof(t_list));
 
+	if (!elem1 || !elem2 || !elem3)
+	{
+		if (elem1)
+			free(elem1);
+		if (elem2)
+			free(elem2);
+		if (elem3)
+			free(elem3);
+		return (1);
+	}
+
 	lst = elem1;
 	elem1->content = "Hola";
 	elem1->next = elem2;

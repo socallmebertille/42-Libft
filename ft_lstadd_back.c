@@ -18,16 +18,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 
 	if (!new || !lst)
 		return ;
-	if (*lst == NULL)
+	if (!*lst)
 		*lst = new;
 	else if (lst && new)
 	{
-		current = *lst;
-		while (current->next)
-			current = current->next;
+		current = ft_lstlast(*lst);
 		current->next = new;
 	}
-	new->next = NULL;
 }
 
 /*#include <stdio.h>
@@ -65,15 +62,18 @@ int	main(void)
 	printf("Ma liste chainee avant ft_lstadd_back :\n");
 	aff_list(lst);
 
+	t_list	*begin = lst;
 	t_list	*new = malloc(sizeof(t_list));
 
 	if (!new)
 		return (1);
 	new->content = " tal ?";
-	ft_lstadd_back(&lst, new);
+	new->next = NULL;
+
+	ft_lstadd_back(&begin, new);
 
 	printf("\nMa liste chainee apres ft_lstadd_back :\n");
-	aff_list(lst);
+	aff_list(begin);
 
 	free(elem1);
 	free(elem2);

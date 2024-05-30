@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 21:07:39 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/26 01:34:16 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/29 14:41:27 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_count(long nb)
+static int	ft_count(long nb)
 {
 	int	count;
 
