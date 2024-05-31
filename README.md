@@ -4,7 +4,7 @@
 
 ## Makefile tutorial
 <br>
-``` https://makefiletutorial.com/ ```
+` https://makefiletutorial.com/ `
 
 <br>
 
