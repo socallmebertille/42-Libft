@@ -6,7 +6,7 @@
 /*   By: saberton <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 18:09:29 by saberton          #+#    #+#             */
-/*   Updated: 2024/05/24 14:40:31 by saberton         ###   ########.fr       */
+/*   Updated: 2024/05/31 14:43:24 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz)
 	size_t	j;
 	size_t	len;
 
-	len = ft_strlen(dst);
-	if (siz == 0)
+	if (siz == 0 && (!dst || !src))
 		return (ft_strlen(src));
+	len = ft_strlen(dst);
 	if (siz <= len)
 		return (siz + ft_strlen(src));
 	i = len;

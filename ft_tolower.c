@@ -26,7 +26,7 @@ int	main()
 {
 	int	c;
 
-	c = -129;
+	c = 5;
 	printf("%d\n", tolower(c));
 	printf("%d\n", ft_tolower(c));	
 }*/
